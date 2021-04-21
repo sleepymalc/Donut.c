@@ -13,7 +13,7 @@
 
 int8_t b[1760], z[1760];
 
-void main()
+int main()
 {
     int sA = 1024, cA = 0, sB = 1024, cB = 0, _;
     for (;;)
@@ -51,11 +51,11 @@ void main()
             }
             R(9, 7, cj, sj) // rotate j
         }
+        printf("\x1b[H");
         for (int k = 0; 1761 > k; k++)
             putchar(k % 80 ? b[k] : 10);
         R(5, 7, cA, sA);
         R(5, 8, cB, sB);
         usleep(15000);
-        printf("\x1b[23A");
     }
 }

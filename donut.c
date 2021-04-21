@@ -24,8 +24,8 @@ int main() {
         for (int k = 0; 1761 > k; ++k)
             putchar(k % 80 ? b[k] : 10);
 
-        //Control the rotation axis
+        //Control the rotation speed(WPM)
         A += 0.01;
-        B += 0.001;
+        B += 0.01;
     }
 }

@@ -47,11 +47,10 @@ int main()
             }
             R(.07, h, g);
         }
+        printf("\x1b[H");
         for (k = 0; 1761 > k; k++)
             putchar(k % 80 ? b[k] : 10);
         R(.04, e, a);
-        // R(.02, d, c);
         usleep(15000 * 10);
-        printf("\n donut.c! \x1b[23A");
     }
 }
