@@ -1,0 +1,19 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {1}{Overview}{2}{0}{1}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {2}{Motivation}{3}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {3}{Introduction}{4}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {4}{Draw a donut}{5}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {5}{Rotate a donut}{6}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {6}{Bright and Dark}{7}{0}{6}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {7}{Projection into terminal}{8}{0}{7}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {8}{Discrete Dynamic System}{9}{0}{8}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {9}{Reference}{10}{0}{9}
