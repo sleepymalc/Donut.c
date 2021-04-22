@@ -1,12 +1,12 @@
 ## Source Code TODO ( Extra ) :
 
-1. Change size
+1. Change size(done)
 
 2. Choose rotation axis.
 
 3. Fixed sphere and light moved
 
-4. The brightness of light
+4. The brightness of light(done)
 
 5. Differnet objects : cubic, tetrahedron
 
