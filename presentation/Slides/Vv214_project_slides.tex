@@ -14,6 +14,36 @@
 \usepackage{hyperref}
 \usepackage{textpos}
 \usepackage{mathtools, nccmath}
+\usepackage{listings}
+
+\colorlet{mygray}{black!30}
+\colorlet{mygreen}{green!60!blue}
+\colorlet{mymauve}{red!60!blue}
+
+\lstset{
+  backgroundcolor=\color{gray!10},  
+  basicstyle=\fontsize{9}{10}\ttfamily,
+  columns=fullflexible,
+  breakatwhitespace=false,      
+  breaklines=true,                
+  captionpos=b,                    
+  commentstyle=\color{mygreen}, 
+  extendedchars=true,              
+  frame=single,                   
+  keepspaces=true,             
+  keywordstyle=\color{blue},      
+  language=c++,                 
+  numbers=none,                
+  numbersep=5pt,                   
+  numberstyle=\tiny\color{blue}, 
+  rulecolor=\color{mygray},        
+  showspaces=false,               
+  showtabs=false,                 
+  stepnumber=5,                  
+  stringstyle=\color{mymauve},    
+  tabsize=3,                      
+  title=\lstname                
+}
 
 \makeatletter
 \let\@@magyar@captionfix\relax
@@ -77,7 +107,6 @@
             \item Bright and dark
             \item Projection into terminal
             \item Discrete Dynamic System
-            \item Extra
             \item Source Code
             \item Reference
         \end{enumerate}
@@ -387,10 +416,55 @@
 \begin{frame}
     \frametitle{Projection into terminal}
 
-    We first derive the simple relation and then consider the problem of overlapping.
+    From the figure, we set the screen at $z'$, and we get
+
+    \begin{equation*}
+            \frac{y'}{z'} = \frac{y}{z + K_1} \quad \Rightarrow \quad y' = \frac{yz'}{z + K_1}
+    \end{equation*}
+
+    where $K_1$ is the constant added to move the donut backward. Since $z'$ is another fixed number,
+    we let it be a constant, say $K_2$, then the projection equation becomes
+
+    \begin{equation*}
+        \begin{pmatrix}
+            x'  \\[0.5em]
+            y'
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            \frac{K_2 x}{K_1 + z} \\[0.5em]
+            \frac{K_2 y}{K_1 + z}
+        \end{pmatrix}
+    \end{equation*}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Figures/projection.png}
+        \label{fig1}
+    \end{figure}
+
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Projection into terminal}
+\begin{frame}
+    \frametitle{z-buffer}
+
+    As we mentioned before, when plotting a bunch of points, we might plot different points at the 
+    same location but at different \emph{depths}, so we maintain a \emph{z-buffer}, which stores 
+    the $z$ coordinate of everything we draw. If we need to plot a location, we first check whether 
+    we're plotting in front of what's there already.
 
     \nullspace
-    
+    A trick to do this is by computing $z^{-1} = \frac{1}{z}$ and use that when depth buffering 
+    because:
+    \begin{itemize}
+        \item $z^{-1} = 0$ corresponds to infinite depth, so we can initialize our z-buffer to 0 and 
+            have the background be infinitely far away.
+        \item We can re-use $z^{-1}$ when computing $x'$ and $y'$, since multiplication if much faster 
+            than division.
+    \end{itemize}
 
 \end{frame}
 
@@ -399,6 +473,126 @@
 \section{Discrete Dynamic System}
 \begin{frame}
     \frametitle{Discrete Dynamic System}
+
+    Now, we are fully prepared to plot the result on the terminal. But one thing we need to be aware
+    of is we can't really plot the 'animation', instead we plot frames one by one, which corresponding 
+    to the concept to \emph{discrete dynamic system}. To be clearer, we have
+
+    \begin{equation*}
+        R(t + T) = R(t)
+        \cdot
+        \begin{pmatrix}
+            x   \\
+            y   \\
+            z
+        \end{pmatrix}
+    \end{equation*}
+
+    where $T$ is the time between two frames, $R(t)$ corresponds to all the linear transformation we 
+    apply to a point.
+
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Discrete Dynamic System}
+\begin{frame}
+    \frametitle{Discrete Dynamic System}
+
+    If we want to calculate a frame after a long time, we can actually \emph{diagonalize} $R(t)$
+    as
+
+    \begin{equation*}
+        R(t) = S D(t) S^{-1}
+    \end{equation*}
+    where $S$ is the change of basis matrix for $R(t)$, $D(t)$ is a diagonal matrix whose diagonal 
+    consists of \emph{eigenvalue} of $R(t)$.
+
+    \nullspace
+    Then we can quickly get $R^t(t)$ for large $n$ by
+    
+    \begin{equation*}
+        R^n(t) = SD^n(t)S^{-1}
+    \end{equation*}
+    
+    But in this case we actually need to calculate every frame, 
+    so we do not need to change basis procedure.
+
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Demonstration}
+\begin{frame}
+    \frametitle{Demonstration}
+
+    Now let we have some interesting demonstration!
+
+
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Demonstration}
+\begin{frame}
+    \frametitle{Demonstration}
+
+
+
+\end{frame}
+%--------------------------------------------------------------------------------------------------
+
+\section{Demonstration}
+\begin{frame}
+    \frametitle{Demonstration}
+
+
+
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Demonstration}
+\begin{frame}
+    \frametitle{Demonstration}
+
+
+
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\defverbatim[colored]\lstI{
+    \begin{lstlisting}
+                             k;double sin(),
+                         cos();int main(){float 
+                      A=0,B=0,i,j,z[1760];char b[
+                     1760];printf("\x1b[2J");for(;;
+                  ){memset(b,32,1760);memset(z,0,7040)
+                  ;for(j=0;6.28>j;j+=0.07)for(i=0;6.28
+                 >i;i+=0.02){float c=sin(i),d=cos(j),e=
+                 sin(A),f=sin(j),g=cos(A),h=d+2,D=1/(c*
+                 h*e+f*g+5),l=cos      (i),m=cos(B),n=s\
+                in(B),t=c*h*g-f*        e;int x=40+30*D*
+                (l*h*m-t*n),y=            12+15*D*(l*h*n
+                +t*m),o=x+80*y,          N=8*((f*e-c*d*g
+                 )*m-c*d*e-f*g-l        *d*n);if(22>y&&
+                 y>0&&x>0&&80>x&&D>z[o]){z[o]=D;;;b[o]=
+                 ".,-~:;=!*#$@"[N>0?N:0];}}/*#****!!-*/
+                  printf("\x1b[H");for(k=0;1761>k;k++)
+                   putchar(k%80?b[k]:10);A+=0.04;B+=
+                     0.02;}}/*****####*******!!=;:~
+                       ~::==!!!**********!!!==::-
+                         .,~~;;;========;;;:~-.
+                             ..,--------,*/
+    \end{lstlisting}
+}
+
+\section{Source Code}
+\begin{frame}
+    \frametitle{Source Code}
+
+    \lstI
 
 \end{frame}
 
