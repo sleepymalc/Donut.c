@@ -90,7 +90,7 @@
     \frametitle{Motivation}
 
     Back in 2006, there's an interesting c project called Donut.c, which will print a rotating 
-    donut in the terminal by \emph{Ascii character}.
+    donut in the terminal.
 
     \nullspace
     Looking into the source code and a blog updated recently by the author, we find out 
@@ -108,7 +108,20 @@
 \begin{frame}
     \frametitle{Introduction}
 
+    To start with, we first need to design a way to show the donut. Seems the terminal has a dark 
+    background with white character.
     
+    \nullspace
+    We let the \textbf{size} of the character to mimic the brightness of a single pixel. We show 
+    the character array as below, from the darkest to the brightest:
+
+    \begin{equation*}
+        \{.\quad ,\quad -~\quad ;\quad =\quad !\quad *\quad \#\quad \$\quad @\}
+    \end{equation*}
+
+    \nullspace
+    With these characters, we can generate some black \& white \emph{ascii art} in the terminal!
+
 \end{frame}
 
 %--------------------------------------------------------------------------------------------------
@@ -116,6 +129,89 @@
 \section{Draw a donut}
 \begin{frame}
     \frametitle{Draw a donut}
+
+    Now we have the way to show some diagram in the terminal, then we start to consider how to 
+    actually generate a rotating donut in the terminal.
+
+    \nullspace
+    In a mathematical way to produce a donut, we start with the concept of \emph{parametric equation}.
+    Since a donut basically is a circle rotating respected to the axis parallel to the fixed diameter,
+    with some simply geometry, we have:
+
+    \begin{equation*}
+        \begin{pmatrix}
+            x   \\
+            y   \\
+            z
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            R_2 \\
+            0   \\
+            0
+        \end{pmatrix}
+        +
+        \begin{pmatrix}
+            R_1\cos{\theta} \\
+            R_1\sin{\theta} \\
+            0
+        \end{pmatrix}
+        ,\quad \theta \in [0,2\pi)
+    \end{equation*}
+
+    which produce two circles in the $x-y$ plane.
+
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Draw a donut}
+\begin{frame}
+    \frametitle{Draw a donut}
+
+    Since we now have two circles, we now only need to rotate these circles for $\pi$ degree by 
+    applying a \emph{rotation matrix w.r.t. y-axis}.
+
+    \nullspace
+    With the parametric equation we have derived, we have:
+
+    \begin{equation*}
+        \underbrace{
+        \begin{pmatrix}
+            \cos\phi & 0 & \sin\phi \\
+            0 & 1 & 0\\
+            -\sin\phi & 0 & \cos\phi
+        \end{pmatrix}
+        }_\text{Y : rotation matrix for y-axis}
+        \cdot
+        \underbrace{
+            \begin{pmatrix}
+                R_2 + R_1\cos{\theta} \\
+                R_1\sin{\theta} \\
+                0
+            \end{pmatrix}
+        }_\text{two circles' parametric eqs.}
+        ,\quad
+        \begin{cases}
+            \theta \in [0,2\pi)\\
+            \phi   \in [0,\pi)
+        \end{cases}
+    \end{equation*}
+
+    \nullspace
+    This produce a full donut in the 3 dimensional space. And for simplicity, we will now omit 
+    the angles' ranges from now on. 
+
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Draw a donut}
+\begin{frame}
+    \frametitle{Draw a donut}
+
+%a fixed donut ascii figure / a gif for producing a donut
+
 
 \end{frame}
 
@@ -125,6 +221,46 @@
 \begin{frame}
     \frametitle{Rotate a donut}
 
+    Now let say we want to rotate this donut respect to $x$ and $z$ axis, we just need to apply the
+    rotation matrix as below:
+
+    \begin{equation*}
+        \begin{split}
+            \overbrace{
+                \begin{pmatrix}
+                    1           & 0             & 0             \\
+                    0           & \cos\psi_1    & \sin\psi_1    \\
+                    0           & -\sin\psi_1   & \cos\psi_1
+                \end{pmatrix}
+            }^\text{X : rotation matrix for x-axis}
+            &\cdot
+            \overbrace{
+                \begin{pmatrix}
+                    \cos\psi_2  & \sin \psi_2   & 0         \\
+                    -\sin\psi_2 & \cos \psi_2   & 0         \\
+                    0           & 0             & 1
+                \end{pmatrix}
+            }^\text{Z : rotation matrix for z-axis}\\
+            &\cdot
+            \underbrace{
+            \begin{pmatrix}
+                \cos\phi & 0 & \sin\phi \\
+                0 & 1 & 0\\
+                -\sin\phi & 0 & \cos\phi
+            \end{pmatrix}
+            }_\text{Y}
+            \cdot
+            \begin{pmatrix}
+                R_2 + R_1\cos{\theta} \\
+                R_1\sin{\theta} \\
+                0
+            \end{pmatrix}
+        \end{split}
+    \end{equation*}
+
+    Then now, we have a rotating donut in 3 dimensional space, which rotating speed is now fully 
+    controlled by the \emph{rate of change} of angles $\psi_1$ and $\psi_2$!
+
 \end{frame}
 
 %--------------------------------------------------------------------------------------------------
@@ -133,6 +269,94 @@
 \begin{frame}
     \frametitle{Bright and Dark}
 
+    Now, let us think about how we actually get the brightness for an image. What makes the 
+    differences of bright and dark? The \textbf{light direction} and the \textbf{normal vector} for 
+    the surface!
+
+    \nullspace
+    Let us choose a light direction vector, say 
+    \begin{equation*}
+        L :=
+        \begin{pmatrix}
+            L_x \\
+            L_y \\
+            L_z
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            0   \\
+            1   \\
+            -1  
+        \end{pmatrix}
+    \end{equation*}
+
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Bright and Dark}
+\begin{frame}
+    \frametitle{Bright and Dark}
+
+    And by simply geometry, the normal vector can be derived from the same way, we first consider a
+    particular $\theta$ when creating the donut, we find out that for such a point, say
+    \begin{equation*}
+        \begin{pmatrix}
+        x   \\
+        y   \\
+        z
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            R_2 + R_1\cos{\theta} \\
+            R_1\sin{\theta} \\
+            0
+        \end{pmatrix}
+    \end{equation*}
+    the normal vector is:
+    \begin{equation*}
+        N :=
+        \begin{pmatrix}
+            N_x \\
+            N_y \\
+            N_z
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            \cos\theta  \\
+            \sin\theta  \\
+            0
+        \end{pmatrix}
+    \end{equation*}
+
+    then we just need to apply the same rotation matrix $X$ and $Z$, we can get every normal vector
+    on the surface of a donut!
+
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Bright and Dark}
+\begin{frame}
+    \frametitle{Bright and Dark}
+
+    In order to show how much light is directly shot on the particular pixel on a
+    surface, we use \textbf{inner product} between the \emph{normal vector} and \emph{light vector},
+    namely
+
+    \begin{equation*}
+        B_{(x,y,z)} := <N,L> =L^T N = 
+        (L_x,L_y,L_z)
+        \cdot
+        \begin{pmatrix}
+            N_x \\
+            N_y \\
+            N_z
+        \end{pmatrix}
+    \end{equation*}
+
+    where $N_i$ and $L_i$ is known on every point for $i = x,y,z$.
+
 \end{frame}
 
 %--------------------------------------------------------------------------------------------------
@@ -140,6 +364,33 @@
 \section{Projection into terminal}
 \begin{frame}
     \frametitle{Projection into terminal}
+
+    We have now derived the complete mathematical equation for the rotating donut! The 
+    only thing left is how to let the viewer to \emph{see} the donut in the terminal.
+
+    \nullspace
+    There are two things we need to solve:
+    \begin{itemize}
+        \item Move the donut somewhere in front of the viewer(the viewer is at the origin).
+        \item Project from 3 dimensional space onto our 2 dimensional terminal.
+    \end{itemize}
+
+    \nullspace
+    It's easy to obtain a simple relation for the projection, but there will have some problem 
+    we need to solve, namely \emph{overlapping}.
+
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Projection into terminal}
+\begin{frame}
+    \frametitle{Projection into terminal}
+
+    We first derive the simple relation and then consider the problem of overlapping.
+
+    \nullspace
+    
 
 \end{frame}
 

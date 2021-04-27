@@ -8,12 +8,22 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {4}{Draw a donut}{5}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {5}{Rotate a donut}{6}{0}{5}
+\beamer@sectionintoc {5}{Draw a donut}{6}{0}{5}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {6}{Bright and Dark}{7}{0}{6}
+\beamer@sectionintoc {6}{Draw a donut}{7}{0}{6}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {7}{Projection into terminal}{8}{0}{7}
+\beamer@sectionintoc {7}{Rotate a donut}{8}{0}{7}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {8}{Discrete Dynamic System}{9}{0}{8}
+\beamer@sectionintoc {8}{Bright and Dark}{9}{0}{8}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {9}{Reference}{10}{0}{9}
+\beamer@sectionintoc {9}{Bright and Dark}{10}{0}{9}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {10}{Bright and Dark}{11}{0}{10}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {11}{Projection into terminal}{12}{0}{11}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {12}{Projection into terminal}{13}{0}{12}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {13}{Discrete Dynamic System}{14}{0}{13}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {14}{Reference}{15}{0}{14}

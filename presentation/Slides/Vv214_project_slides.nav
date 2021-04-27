@@ -47,7 +47,7 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {5}{5}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {5}{Rotate a donut}{6}{Rotate a donut}{0}}
+\headcommand {\sectionentry {5}{Draw a donut}{6}{Draw a donut}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\slideentry {5}{0}{1}{6/6}{}{0}}
 \defcounter {refsection}{0}\relax 
@@ -57,7 +57,7 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {6}{6}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {6}{Bright and Dark}{7}{Bright and Dark}{0}}
+\headcommand {\sectionentry {6}{Draw a donut}{7}{Draw a donut}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\slideentry {6}{0}{1}{7/7}{}{0}}
 \defcounter {refsection}{0}\relax 
@@ -67,7 +67,7 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {7}{7}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {7}{Projection into terminal}{8}{Projection into terminal}{0}}
+\headcommand {\sectionentry {7}{Rotate a donut}{8}{Rotate a donut}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\slideentry {7}{0}{1}{8/8}{}{0}}
 \defcounter {refsection}{0}\relax 
@@ -77,7 +77,7 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {8}{8}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {8}{Discrete Dynamic System}{9}{Discrete Dynamic System}{0}}
+\headcommand {\sectionentry {8}{Bright and Dark}{9}{Bright and Dark}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\slideentry {8}{0}{1}{9/9}{}{0}}
 \defcounter {refsection}{0}\relax 
@@ -87,13 +87,63 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {9}{9}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {9}{Reference}{10}{Reference}{0}}
+\headcommand {\sectionentry {9}{Bright and Dark}{10}{Bright and Dark}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\slideentry {9}{0}{1}{10/10}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\beamer@partpages {1}{10}}
-\headcommand {\beamer@subsectionpages {10}{10}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {10}{10}}
-\headcommand {\beamer@documentpages {10}}
-\headcommand {\gdef \inserttotalframenumber {10}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {10}{10}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {10}{Bright and Dark}{11}{Bright and Dark}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {10}{0}{1}{11/11}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {11}{11}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {11}{11}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {11}{11}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {11}{Projection into terminal}{12}{Projection into terminal}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {11}{0}{1}{12/12}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {12}{12}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {12}{12}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {12}{12}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {12}{Projection into terminal}{13}{Projection into terminal}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {12}{0}{1}{13/13}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {13}{13}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {13}{13}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {13}{13}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {13}{Discrete Dynamic System}{14}{Discrete Dynamic System}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {13}{0}{1}{14/14}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {14}{14}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {14}{14}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {14}{14}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {14}{Reference}{15}{Reference}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {14}{0}{1}{15/15}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@partpages {1}{15}}
+\headcommand {\beamer@subsectionpages {15}{15}}
+\headcommand {\beamer@sectionpages {15}{15}}
+\headcommand {\beamer@documentpages {15}}
+\headcommand {\gdef \inserttotalframenumber {15}}
