@@ -4,3 +4,5 @@ proposal/proposal.fls
 proposal/proposal.log
 proposal/proposal.out
 proposal/proposal.synctex.gz
+.DS_Store
+settings.json
