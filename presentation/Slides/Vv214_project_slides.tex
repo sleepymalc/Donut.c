@@ -15,6 +15,7 @@
 \usepackage{textpos}
 \usepackage{mathtools, nccmath}
 \usepackage{listings}
+\usepackage{animate}
 
 \colorlet{mygray}{black!30}
 \colorlet{mygreen}{green!60!blue}
@@ -106,6 +107,7 @@
             \item Bright and dark
             \item Projection into terminal
             \item Discrete Dynamic System
+            \item Demonstration
             \item Source Code
             \item Reference
         \end{enumerate}
@@ -238,8 +240,7 @@
 \begin{frame}
     \frametitle{Draw a donut}
 
-%a fixed donut ascii figure / a gif for producing a donut
-
+    \animategraphics[autoplay,loop,width=\textwidth]{60}{Gifs/make_donut/make_donut-}{0}{383}
 
 \end{frame}
 
@@ -387,6 +388,17 @@
 
 \end{frame}
 
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Bright and Dark}
+\begin{frame}
+    \frametitle{Bright and Dark}
+
+    \animategraphics[autoplay,loop,width=\textwidth]{30}{Gifs/light_donut/light_donut-}{0}{222}
+
+\end{frame}
+
 %--------------------------------------------------------------------------------------------------
 
 \section{Projection into terminal}
@@ -525,27 +537,10 @@
 \begin{frame}
     \frametitle{Demonstration}
 
-    Now let we have some interesting demonstration!
-
-
-\end{frame}
-
-%--------------------------------------------------------------------------------------------------
-
-\section{Demonstration}
-\begin{frame}
-    \frametitle{Demonstration}
-
-
-
-\end{frame}
-%--------------------------------------------------------------------------------------------------
-
-\section{Demonstration}
-\begin{frame}
-    \frametitle{Demonstration}
-
-
+    \begin{center}
+        \animategraphics[autoplay,loop,width=8cm]{30}{Gifs/demo_donut/donut-}{0}{508}
+    \end{center}
+    
 
 \end{frame}
 
@@ -555,7 +550,9 @@
 \begin{frame}
     \frametitle{Demonstration}
 
-
+    \begin{center}
+        \animategraphics[autoplay,loop,width=8cm]{30}{Gifs/demo_sphere/sphere-}{0}{94}
+    \end{center}
 
 \end{frame}
 
@@ -566,8 +563,8 @@
                              k;double sin()
                          ,cos();main(){float A=
                        0,B=0,i,j,z[1760];char b[
-                     1760];printf("\x1b[2J");for(;;
-                  ){memset(b,32,1760);memset(z,0,7040)
+                    1760];printf("\x1b[2J");for(;;)
+                  {memset(b,32,1760);memset(z,0,7040)
                   ;for(j=0;6.28>j;j+=0.07)for(i=0;6.28
                  >i;i+=0.02){float c=sin(i),d=cos(j),e=
                  sin(A),f=sin(j),g=cos(A),h=d+2,D=1/(c*
@@ -580,10 +577,10 @@
                  ".,-~:;=!*#$@"[N>0?N:0];}}/*#****!!-*/
                   printf("\x1b[H");for(k=0;1761>k;k++)
                    putchar(k%80?b[k]:10);A+=0.04;B+=
-                     0.02;}}/*****####*******!!=;:~
-                      ~::==!!!**********!!!==::-
-                         .,~~;;;========;;;:~-.
-                             ..,--------,*/
+                     0.02;}}/* To compile it ******
+                      * gcc donut.c -lm -o donut *
+                        ****** To run it *******
+                            **** ./donut **/
     \end{lstlisting}
 }
 
@@ -606,6 +603,7 @@
             \item \url{https://www.a1k0n.net/2011/07/20/donut-math.html}
             \item \url{https://en.wikipedia.org/wiki/3D_computer_graphics}
             \item \url{https://www.javatpoint.com/computer-graphics-z-buffer-algorithm}
+            \item \url{https://github.com/3b1b/manim}
         \end{itemize}
     }
     

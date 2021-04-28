@@ -20,24 +20,22 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {10}{Bright and Dark}{11}{0}{10}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {11}{Projection into terminal}{12}{0}{11}
+\beamer@sectionintoc {11}{Bright and Dark}{12}{0}{11}
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {12}{Projection into terminal}{13}{0}{12}
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {13}{Projection into terminal}{14}{0}{13}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {14}{Discrete Dynamic System}{15}{0}{14}
+\beamer@sectionintoc {14}{Projection into terminal}{15}{0}{14}
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {15}{Discrete Dynamic System}{16}{0}{15}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {16}{Demonstration}{17}{0}{16}
+\beamer@sectionintoc {16}{Discrete Dynamic System}{17}{0}{16}
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {17}{Demonstration}{18}{0}{17}
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {18}{Demonstration}{19}{0}{18}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {19}{Demonstration}{20}{0}{19}
+\beamer@sectionintoc {19}{Source Code}{20}{0}{19}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {20}{Source Code}{21}{0}{20}
-\defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {21}{Reference}{22}{0}{21}
+\beamer@sectionintoc {20}{Reference}{21}{0}{20}
