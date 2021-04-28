@@ -21,7 +21,6 @@
 \colorlet{mymauve}{red!60!blue}
 
 \lstset{
-  backgroundcolor=\color{gray!10},  
   basicstyle=\fontsize{9}{10}\ttfamily,
   columns=fullflexible,
   breakatwhitespace=false,      
@@ -564,9 +563,9 @@
 
 \defverbatim[colored]\lstI{
     \begin{lstlisting}
-                             k;double sin(),
-                         cos();int main(){float 
-                      A=0,B=0,i,j,z[1760];char b[
+                             k;double sin()
+                         ,cos();main(){float A=
+                       0,B=0,i,j,z[1760];char b[
                      1760];printf("\x1b[2J");for(;;
                   ){memset(b,32,1760);memset(z,0,7040)
                   ;for(j=0;6.28>j;j+=0.07)for(i=0;6.28
@@ -582,7 +581,7 @@
                   printf("\x1b[H");for(k=0;1761>k;k++)
                    putchar(k%80?b[k]:10);A+=0.04;B+=
                      0.02;}}/*****####*******!!=;:~
-                       ~::==!!!**********!!!==::-
+                      ~::==!!!**********!!!==::-
                          .,~~;;;========;;;:~-.
                              ..,--------,*/
     \end{lstlisting}
