@@ -46,7 +46,7 @@ According to the SJTU student handbook (2019 version),
 
 	Chen Xiaoyu
   
-  Wu Jinyi
+	Wu Jinyi
 	
 	Pingbang Hu
 	
