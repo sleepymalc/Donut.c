@@ -97,21 +97,21 @@
 
 %--------------------------------------------------------------------------------------------------
 \section{Overview}
-    \begin{frame}
-        \frametitle{Overview}
-        \begin{enumerate}
-            \item Motivation
-            \item Introduction
-            \item Draw a donut
-            \item Rotate a donut
-            \item Bright and dark
-            \item Projection into terminal
-            \item Discrete Dynamic System
-            \item Demonstration
-            \item Source Code
-            \item Reference
-        \end{enumerate}
-    \end{frame}
+\begin{frame}
+    \frametitle{Overview}
+    \begin{enumerate}
+        \item Motivation
+        \item Introduction
+        \item Draw a donut
+        \item Rotate a donut
+        \item Bright and dark
+        \item Projection into terminal
+        \item Discrete Dynamic System
+        \item Demonstration
+        \item Source Code
+        \item Reference
+    \end{enumerate}
+\end{frame}
 
 %--------------------------------------------------------------------------------------------------
 
@@ -119,15 +119,15 @@
 \begin{frame}
     \frametitle{Motivation}
 
-    Back in 2006, there's an interesting c project called Donut.c, which will print a rotating 
+    Back in 2006, there's an interesting c project called Donut.c, which will print a rotating
     donut in the terminal.
 
     \nullspace
-    Looking into the source code and a blog updated recently by the author, we find out 
+    Looking into the source code and a blog updated recently by the author, we find out
     that this program is highly depended on what we have learned in Vv214.
 
     \nullspace
-    After some discussion, we decide to dive into the source code and analyze the whole mechanism 
+    After some discussion, we decide to dive into the source code and analyze the whole mechanism
     behind it.
 
 \end{frame}
@@ -138,11 +138,11 @@
 \begin{frame}
     \frametitle{Introduction}
 
-    To start with, we first need to design a way to show the donut. Since the terminal has a dark 
+    To start with, we first need to design a way to show the donut. Since the terminal has a dark
     background with white character.
-    
+
     \nullspace
-    We let the \textbf{size} of the character to mimic the brightness of a single pixel. We show 
+    We let the \textbf{size} of the character to mimic the brightness of a single pixel. We show
     the character array as below, from the darkest to the brightest:
 
     \begin{equation*}
@@ -160,7 +160,7 @@
 \begin{frame}
     \frametitle{Draw a donut}
 
-    Now we have the way to show some diagrams in the terminal, then we start to consider how to 
+    Now we have the way to show some diagrams in the terminal, then we start to consider how to
     actually generate a rotating donut in the terminal.
 
     \nullspace
@@ -170,8 +170,8 @@
 
     \begin{equation*}
         \begin{pmatrix}
-            x   \\
-            y   \\
+            x \\
+            y \\
             z
         \end{pmatrix}
         =
@@ -199,7 +199,7 @@
 \begin{frame}
     \frametitle{Draw a donut}
 
-    Since we now have two circles, we now only need to rotate these circles for $\pi$ degree by 
+    Since we now have two circles, we now only need to rotate these circles for $\pi$ degree by
     applying a \emph{rotation matrix w.r.t. y-axis}.
 
     \nullspace
@@ -207,30 +207,30 @@
 
     \begin{equation*}
         \underbrace{
-        \begin{pmatrix}
-            \cos\phi & 0 & \sin\phi \\
-            0 & 1 & 0\\
-            -\sin\phi & 0 & \cos\phi
-        \end{pmatrix}
+            \begin{pmatrix}
+                \cos\phi  & 0 & \sin\phi \\
+                0         & 1 & 0        \\
+                -\sin\phi & 0 & \cos\phi
+            \end{pmatrix}
         }_\text{Y : rotation matrix for y-axis}
         \cdot
         \underbrace{
             \begin{pmatrix}
                 R_2 + R_1\cos{\theta} \\
-                R_1\sin{\theta} \\
+                R_1\sin{\theta}       \\
                 0
             \end{pmatrix}
         }_\text{two circles' parametric eqs.}
         ,\quad
         \begin{cases}
-            \theta \in [0,2\pi)\\
+            \theta \in [0,2\pi) \\
             \phi   \in [0,\pi)
         \end{cases}
     \end{equation*}
 
     \nullspace
-    This produce a full donut in the 3 dimensional space. And for simplicity, we will now omit 
-    the angles' ranges from now on. 
+    This produce a full donut in the 3 dimensional space. And for simplicity, we will now omit
+    the angles' ranges from now on.
 
 \end{frame}
 
@@ -257,37 +257,37 @@
         \begin{split}
             \overbrace{
                 \begin{pmatrix}
-                    1           & 0             & 0             \\
-                    0           & \cos\psi_1    & \sin\psi_1    \\
-                    0           & -\sin\psi_1   & \cos\psi_1
+                    1 & 0           & 0          \\
+                    0 & \cos\psi_1  & \sin\psi_1 \\
+                    0 & -\sin\psi_1 & \cos\psi_1
                 \end{pmatrix}
             }^\text{X : rotation matrix for x-axis}
             &\cdot
             \overbrace{
                 \begin{pmatrix}
-                    \cos\psi_2  & \sin \psi_2   & 0         \\
-                    -\sin\psi_2 & \cos \psi_2   & 0         \\
-                    0           & 0             & 1
+                    \cos\psi_2  & \sin \psi_2 & 0 \\
+                    -\sin\psi_2 & \cos \psi_2 & 0 \\
+                    0           & 0           & 1
                 \end{pmatrix}
             }^\text{Z : rotation matrix for z-axis}\\
             &\cdot
             \underbrace{
-            \begin{pmatrix}
-                \cos\phi & 0 & \sin\phi \\
-                0 & 1 & 0\\
-                -\sin\phi & 0 & \cos\phi
-            \end{pmatrix}
+                \begin{pmatrix}
+                    \cos\phi  & 0 & \sin\phi \\
+                    0         & 1 & 0        \\
+                    -\sin\phi & 0 & \cos\phi
+                \end{pmatrix}
             }_\text{Y}
             \cdot
             \begin{pmatrix}
                 R_2 + R_1\cos{\theta} \\
-                R_1\sin{\theta} \\
+                R_1\sin{\theta}       \\
                 0
             \end{pmatrix}
         \end{split}
     \end{equation*}
 
-    Then now, we have a rotating donut in 3 dimensional space, which rotating speed is now fully 
+    Then now, we have a rotating donut in 3 dimensional space, which rotating speed is now fully
     controlled by the \emph{rate of change} of angles $\psi_1$ and $\psi_2$!
 
 \end{frame}
@@ -298,12 +298,12 @@
 \begin{frame}
     \frametitle{Bright and Dark}
 
-    Now, let us think about how we actually get the brightness for an image. What makes the 
-    differences of bright and dark? The \textbf{light direction} and the \textbf{normal vector} for 
+    Now, let us think about how we actually get the brightness for an image. What makes the
+    differences of bright and dark? The \textbf{light direction} and the \textbf{normal vector} for
     the surface!
 
     \nullspace
-    Let us choose a light direction vector, say 
+    Let us choose a light direction vector, say
     \begin{equation*}
         L :=
         \begin{pmatrix}
@@ -313,9 +313,9 @@
         \end{pmatrix}
         =
         \begin{pmatrix}
-            0   \\
-            1   \\
-            -1  
+            0 \\
+            1 \\
+            -1
         \end{pmatrix}
     \end{equation*}
 
@@ -331,14 +331,14 @@
     particular $\theta$ when creating the donut, we find out that for such a point, say
     \begin{equation*}
         \begin{pmatrix}
-        x   \\
-        y   \\
-        z
+            x \\
+            y \\
+            z
         \end{pmatrix}
         =
         \begin{pmatrix}
             R_2 + R_1\cos{\theta} \\
-            R_1\sin{\theta} \\
+            R_1\sin{\theta}       \\
             0
         \end{pmatrix}
     \end{equation*}
@@ -352,8 +352,8 @@
         \end{pmatrix}
         =
         \begin{pmatrix}
-            \cos\theta  \\
-            \sin\theta  \\
+            \cos\theta \\
+            \sin\theta \\
             0
         \end{pmatrix}
     \end{equation*}
@@ -374,7 +374,7 @@
     namely
 
     \begin{equation*}
-        B_{(x,y,z)} := <N,L> =L^T N = 
+        B_{(x,y,z)} := <N,L> =L^T N =
         (L_x,L_y,L_z)
         \cdot
         \begin{pmatrix}
@@ -405,7 +405,7 @@
 \begin{frame}
     \frametitle{Projection into terminal}
 
-    We have now derived the complete mathematical equation for the rotating donut! The 
+    We have now derived the complete mathematical equation for the rotating donut! The
     only thing left is how to let the viewer to \emph{see} the donut in the terminal.
 
     \nullspace
@@ -416,7 +416,7 @@
     \end{itemize}
 
     \nullspace
-    It's easy to obtain a simple relation for the projection, but there will have some problem 
+    It's easy to obtain a simple relation for the projection, but there will have some problem
     we need to solve, namely \emph{overlapping}.
 
 \end{frame}
@@ -430,7 +430,7 @@
     From the figure, we set the screen at $z'$, and we get
 
     \begin{equation*}
-            \frac{y'}{z'} = \frac{y}{z + K_1} \quad \Rightarrow \quad y' = \frac{yz'}{z + K_1}
+        \frac{y'}{z'} = \frac{y}{z + K_1} \quad \Rightarrow \quad y' = \frac{yz'}{z + K_1}
     \end{equation*}
 
     where $K_1$ is the constant added to move the donut backward. Since $z'$ is another fixed number,
@@ -438,7 +438,7 @@
 
     \begin{equation*}
         \begin{pmatrix}
-            x'  \\[0.5em]
+            x' \\[0.5em]
             y'
         \end{pmatrix}
         =
@@ -462,19 +462,19 @@
 \begin{frame}
     \frametitle{z-buffer}
 
-    As we mentioned before, when plotting a bunch of points, we might plot different points at the 
-    same location but at different \emph{depths}, so we maintain a \emph{z-buffer}, which stores 
-    the $z$ coordinate of everything we draw. If we need to plot a location, we first check whether 
+    As we mentioned before, when plotting a bunch of points, we might plot different points at the
+    same location but at different \emph{depths}, so we maintain a \emph{z-buffer}, which stores
+    the $z$ coordinate of everything we draw. If we need to plot a location, we first check whether
     we're plotting in front of what's there already.
 
     \nullspace
-    A trick to do this is by computing $z^{-1} = \frac{1}{z}$ and use that when depth buffering 
+    A trick to do this is by computing $z^{-1} = \frac{1}{z}$ and use that when depth buffering
     because:
     \begin{itemize}
-        \item $z^{-1} = 0$ corresponds to infinite depth, so we can initialize our z-buffer to 0 and 
-            have the background be infinitely far away.
-        \item We can re-use $z^{-1}$ when computing $x'$ and $y'$, since multiplication if much faster 
-            than division.
+        \item $z^{-1} = 0$ corresponds to infinite depth, so we can initialize our z-buffer to 0 and
+              have the background be infinitely far away.
+        \item We can re-use $z^{-1}$ when computing $x'$ and $y'$, since multiplication if much faster
+              than division.
     \end{itemize}
 
 \end{frame}
@@ -486,20 +486,20 @@
     \frametitle{Discrete Dynamic System}
 
     Now, we are fully prepared to plot the result on the terminal. But one thing we need to be aware
-    of is we can't really plot the 'animation', instead we plot frames one by one, which corresponding 
+    of is we can't really plot the 'animation', instead we plot frames one by one, which corresponding
     to the concept to \emph{discrete dynamic system}. To be clearer, we have
 
     \begin{equation*}
         R(t + T) = R(t)
         \cdot
         \begin{pmatrix}
-            x   \\
-            y   \\
+            x \\
+            y \\
             z
         \end{pmatrix}
     \end{equation*}
 
-    where $T$ is the time between two frames, $R(t)$ corresponds to all the linear transformation we 
+    where $T$ is the time between two frames, $R(t)$ corresponds to all the linear transformation we
     apply to a point.
 
 \end{frame}
@@ -516,17 +516,17 @@
     \begin{equation*}
         R(t) = S D(t) S^{-1}
     \end{equation*}
-    where $S$ is the change of basis matrix for $R(t)$, $D(t)$ is a diagonal matrix whose diagonal 
+    where $S$ is the change of basis matrix for $R(t)$, $D(t)$ is a diagonal matrix whose diagonal
     consists of \emph{eigenvalue} of $R(t)$.
 
     \nullspace
     Then we can quickly get $R^t(t)$ for large $n$ by
-    
+
     \begin{equation*}
         R^n(t) = SD^n(t)S^{-1}
     \end{equation*}
-    
-    But in this case we actually need to calculate every frame, 
+
+    But in this case we actually need to calculate every frame,
     so we do not need to change basis procedure.
 
 \end{frame}
@@ -540,7 +540,7 @@
     \begin{center}
         \animategraphics[autoplay,loop,width=8cm]{30}{Gifs/demo_donut/donut-}{0}{508}
     \end{center}
-    
+
 
 \end{frame}
 
@@ -606,7 +606,7 @@
             \item \url{https://github.com/3b1b/manim}
         \end{itemize}
     }
-    
+
 \end{frame}
 
 

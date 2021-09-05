@@ -6,17 +6,17 @@
 // gcc donut.c -lm -o donut
 
 int k;
-const float theta_spacing = 0.07; // θ 角度，圆环的横截面圆，Y轴
-const float phi_spacing = 0.02;   // φ 角度，圆环的旋转中心，Z轴
+const float theta_spacing = 0.07;  // θ 角度，圆环的横截面圆，Y轴
+const float phi_spacing = 0.02;    // φ 角度，圆环的旋转中心，Z轴
 
 int main() {
     float A = 0;
     float B = 0;
     float i, j;
-    float zbuff[1760]; // Z buffer of 80 * 22
-    char b[1760];  // chars of 80 * 22
+    float zbuff[1760];  // Z buffer of 80 * 22
+    char b[1760];       // chars of 80 * 22
 
-    printf("\x1b[2J"); // clear screen
+    printf("\x1b[2J");  // clear screen
     for (;;) {
         memset(b, 32, 1760);
         memset(zbuff, 0, 7040);

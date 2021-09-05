@@ -3,8 +3,8 @@
 double sin(), cos();
 int main() {
     int size = 30;       /*change the value to control the size*/
-    int y_pos = 0;      /*change the value to control the y-position of the donut (positive = up)*/
-    int x_pos = 0;      /*change the value to control the x-position of the donut (positive = right)*/
+    int y_pos = 0;       /*change the value to control the y-position of the donut (positive = up)*/
+    int x_pos = 0;       /*change the value to control the x-position of the donut (positive = right)*/
     float speed_x = 1.0; /*change the value to control the rotating speed about x-axis*/
     float speed_z = 1.0; /*change the value to control the rotating speed about z-axis*/
     float R_1 = 1.0;     /*thickness*/
