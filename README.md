@@ -1,42 +1,42 @@
 # Donut.c
 
+<p align="center">
+	<img src="https://github.com/sleepymalc/Donut.c/blob/main/Donut.c.gif"/>
+</p>
+
+<p align="center"><b><i>
+	A Comprehensive Guide on the Mechanism of Donut.c
+</i></b></p>
+
 ## Introduction
 
-​	Back to 2006, there's a interesting c project on the internet called Donut.c, which can print the ascii characters in the terminal of a rotating donut. And recently it is widely spread and discussed through the internet, and after we looko into the source code, we find out that the whole algorithm is based on what we have learned in Vv214. From here, we want to do some deep research and expand this project based on the current one.
+Back in 2006, there was an interesting c project on the internet called `Donut.c`, which can print the ASCII characters in the terminal of a rotating donut. And recently it is widely spread and discussed through the internet, and after we look into the source code, we find out that the whole algorithm is based on what we have learned in Vv214. From here, we want to do some deep research and expand this project based on the current one.
 
 ## Concepts
 
-Here we list some of the usful concept of linear algebra to help us print the rotating donut on the terminal.
+Here we list some useful concepts of linear algebra to help us print the rotating donut on the terminal.
 
-1. Rotation Matrix in 3 dimensional space.
+1. Rotation Matrix in 3-dimensional space.
+Orthogonality: produce normal vector from a surface.
+2. Inner product: dot product of normal vector and light vector to get the brightness.
+3. Projection: to produce 2d animation from 3d space.
+4. Discrete Dynamic System: Frame by frame is generated.
 
-2. Orthogonality : produce normal vector from a surface.
+With these, we can get a thorough understanding of the whole concept, which allows us to further modify it and generate different kinds of animation. For example, we can change the shape, the size, the rotating speed, or even the dimension of the object.
 
-3. Inner product : dot product of normal vector and light vector to get the brightness.
+##	Source
 
-4. Projection : to produce 2d animation from 3d space.
-5. Discrete Dynamic System : Frame by frame are generated.
-
-## 	Goal
-
-​	To get the total understanding of the whole concept, and from here, we can modify if to generate different kind of animation. For example, we can change the shape, the size, the rotating speed, or even the dimension of the object.
-
-## 	Source
-
-1. https://www.a1k0n.net/2011/07/20/donut-math.html
-
-2. https://en.wikipedia.org/wiki/3D_computer_graphics
-
-3. https://www.javatpoint.com/computer-graphics-z-buffer-algorithm
+1. [Donut math: how donut.c works](https://www.a1k0n.net/2011/07/20/donut-math.html)
+2. [3D computer graphics](https://en.wikipedia.org/wiki/3D_computer_graphics)
+3. [Z-Buffer Algorithm](https://www.javatpoint.com/computer-graphics-z-buffer-algorithm)
 
 ## Reminder
 
-​	Due to the `gif` in the presentation slides, please only use **adobe acrobat** to open the pdf, in this way it can work properly as it should be.
-
+Due to the `.gif` in the presentation slides, please only use [Adobe Acrobat](https://www.adobe.com/documentcloud/integrations/microsoft-search.html?s_cid=7015Y0000039qpxQAA&sdid=HVQ7X2NM&mv=search&s_kwcid=AL!3085!3!518186549439!e!!g!!adobe%20pdf!12908270773!121154142426&ef_id=Cj0KCQjw852XBhC6ARIsAJsFPN26h3ML9rEbUnWDlTdvLqTUNFJDkJwfGv0WwqkDXshEuoEUgckbagMaApYpEALw_wcB:G:s) to open the [`.pdf`](https://github.com/sleepymalc/Donut.c/blob/master/presentation/Donut.c.pdf), in this way it can work properly as it should.
 
 ## About Honor Code
 
-If there is same questions or labs in the future, it is the responsibility of JI students not to copy or modify these codes, or TeX files because it is against the Honor Code. The owner of this repository dosen't take any commitment for other's faults.
+If there is the same project in the future in VG101, it is the responsibility of JI students not to copy or modify these codes, or TeX files because it is against the Honor Code. The owner of this repository doesn't take any commission for others' faults.
 
 According to the SJTU student handbook (2019 version),
 
@@ -44,14 +44,11 @@ According to the SJTU student handbook (2019 version),
 
 ## Contribution
 
-	Chen Xiaoyu
-  
-	Wu Jinyi
-	
-	Pingbang Hu
-	
-The work are partially contributed to some other students, TAs and professors in JI, which would be listed if known.
+<p align="center"><b><i>
+	Chen Xiaoyu, Wu Jinyi, Pingbang Hu
+</i></b></p>
 
-## Reminder
+---
 
-If you find any problems in the reposity, welcome to make an issue or pull request.
+The works are partially contributed by some other students, TAs, and professors in JI, which would be listed if known.
+> If you find any problems in the repository, welcome to make an issue or pull request.
