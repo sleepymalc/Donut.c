@@ -12,8 +12,6 @@
 
 Back in 2006, there was an interesting c project on the internet called [`Donut.c`](https://github.com/sleepymalc/Donut.c/blob/master/source_code/donut.c)[^1], which *not only looks like a donut but can also print the ASCII characters in the terminal of a rotating donut*.
 
-<p align="center">
-
 ```c++
              k;double sin()
          ,cos();main(){float A=
@@ -38,11 +36,9 @@ in(B),t=c*h*g-f*        e;int x=40+30*D*
              ..,--------,*/
 ```
 
-</p>
-
 And recently it is widely spread and discussed through the internet, and after we look into the source code, we find out that the whole algorithm is based on what we have learned in Vv214. From here, we want to do some deep research and expand this project based on the current one.
 
-[^1]: Note that we re-factorize the source code to make it *human-readable*. The original code is literally like a donut
+[^1]: Note that we re-factorize the source code to make it *human-readable*. The original code is literally like a donut.
 
 ## Report
 
