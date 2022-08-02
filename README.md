@@ -1,7 +1,7 @@
 # Donut.c
 
 <p align="center">
-	<img src="https://github.com/sleepymalc/Donut.c/blob/master/donut.c.gif"/>
+	<img src="./donut.c.gif"/>
 </p>
 
 <p align="center"><b><i>
